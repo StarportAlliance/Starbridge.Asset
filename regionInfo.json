@@ -1,0 +1,22 @@
+{
+  "CurrentRegionIdx": 5,
+  "Regions": [
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "Starbridge Network",
+      "PingServer": "https://server.starbridge.ink",
+      "Servers": [
+        {
+          "Name": "http-1",
+          "Ip": "https://server.starbridge.ink",
+          "Port": 443,
+          "UseDtls": false,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TargetServer": null,
+      "TranslateName": 1003
+    }
+  ]
+}
