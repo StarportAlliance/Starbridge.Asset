@@ -1,9 +1,9 @@
 {
-  "CurrentRegionIdx": 5,
+  "CurrentRegionIdx": 4,
   "Regions": [
     {
       "$type": "StaticHttpRegionInfo, Assembly-CSharp",
-      "Name": "Starbridge Network",
+      "Name": "<color=#fff385>星桥网络</color> <color=#dd7627>Starbridge Network</color>",
       "PingServer": "https://server.starbridge.ink",
       "Servers": [
         {
