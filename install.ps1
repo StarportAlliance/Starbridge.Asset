@@ -10,14 +10,14 @@ try {
     $wc = New-Object System.Net.WebClient
     $wc.Headers.Add('User-Agent', 'StarbridgeInstaller/1.0.0')
     $bytes = $wc.DownloadData($url)
-    if ($bytes.Length -eq 0) { throw '下载内容为空' }
-    if ($bytes.Length -gt 5242880) { throw '下载内容大小异常' }
+    if ($bytes.Length -eq 0) { throw '下载内容为空。' }
+    if ($bytes.Length -gt 5242880) { throw '下载内容大小异常。' }
     Set-ItemProperty -LiteralPath $dest -Name IsReadOnly -Value $false -ErrorAction SilentlyContinue
     [System.IO.File]::WriteAllBytes($dest, $bytes)
-    Write-Host ('[Starbridge] 已安装服务器列表到: ' + $dest)
-    Write-Host '[Starbridge] 安装完成，现在可以启动 Among Us 了。'
+    Write-Host '[Starbridge] 服务器配置文件安装完成！'
+    Write-Host '[Starbridge] 如果你已启动 Among Us，需要重新启动后服务器列表才会显示。'
 } catch {
-    Write-Host ('[Starbridge] 安装失败：' + $_.Exception.Message)
+    Write-Host ('[Starbridge] 安装服务器配置文件时发生错误：' + $_.Exception.Message)
     $exitCode = 1
 } finally {
     Write-Host ''
