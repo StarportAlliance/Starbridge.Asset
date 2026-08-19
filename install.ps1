@@ -14,10 +14,11 @@ try {
     if ($bytes.Length -gt 5242880) { throw '下载内容大小异常。' }
     Set-ItemProperty -LiteralPath $dest -Name IsReadOnly -Value $false -ErrorAction SilentlyContinue
     [System.IO.File]::WriteAllBytes($dest, $bytes)
-    Write-Host '[Starbridge] 服务器配置文件安装完成！'
-    Write-Host '[Starbridge] 如果你已启动 Among Us，需要重新启动后服务器列表才会显示。'
+    Write-Host '服务器配置文件安装完成！'
+    Write-Host '如果你已启动 Among Us，需要重新启动后服务器列表才会显示。'
 } catch {
-    Write-Host ('[Starbridge] 安装服务器配置文件时发生错误：' + $_.Exception.Message)
+    Write-Host ('安装服务器配置文件时发生错误：' + $_.Exception.Message)
+    Write-Host '请复制错误信息或截图此窗口并向 StarportAlliance 成员报告此问题。'
     $exitCode = 1
 } finally {
     Write-Host ''
