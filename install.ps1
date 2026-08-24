@@ -25,7 +25,7 @@ try {
             while (($readCount = $stream.Read($buffer, 0, $buffer.Length)) -gt 0) {
                 $memStream.Write($buffer, 0, $readCount)
                 $downloaded = $memStream.Length
-                if ($downloaded -gt 5242880) { throw '下载内容大小异常。' }
+                if ($downloaded -gt 1024) { throw '下载内容大小异常。' }
                 if ($totalBytes -gt 0) {
                     $pct = [Math]::Min([int]($downloaded * 100 / $totalBytes), 100)
                     Write-Host ("`r下载进度：{0,3}%  ({1:N2} KB / {2:N2} KB)" -f $pct, ($downloaded / 1KB), ($totalBytes / 1KB)) -NoNewline
