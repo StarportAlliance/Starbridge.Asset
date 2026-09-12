@@ -82,7 +82,7 @@ try {
     # 固定添加只读保护
     Set-ItemProperty -LiteralPath $dest -Name IsReadOnly -Value $true
     Write-Host '服务器配置文件安装完成！'
-    Write-Host '如果你已启动 Among Us，需要重新启动后服务器列表才会显示。'
+    Write-Host '如果您已启动 Among Us，需要重新启动后服务器列表才会显示。'
 }
 catch {
     Write-Host ('安装服务器配置文件时发生错误：' + $_.Exception.Message)
